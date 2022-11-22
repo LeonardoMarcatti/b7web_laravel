@@ -1,0 +1,29 @@
+header {
+  background-color: gray;
+  color: white;
+  padding-left: 5px;
+}
+
+main {
+  background-color: silver;
+  color: black;
+  padding-left: 5px;
+}
+
+footer {
+  background-color: gray;
+  color: black;
+}
+
+footer a {
+  color: red;
+  text-decoration: none;
+}
+
+div {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 25%;
+}

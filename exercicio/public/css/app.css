@@ -1,0 +1,35 @@
+body {
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: 100vh;
+  grid-template-rows: 50px minmax(calc(100vh - 80px), auto) 30px;
+}
+
+header {
+  background-color: lightgray;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+header > img {
+  height: 45px;
+}
+
+section {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 15px;
+}
+
+footer {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  background-color: gray;
+  color: white;
+}

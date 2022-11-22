@@ -1,0 +1,20 @@
+<main>
+  <section>
+    @foreach($pessoas as $pessoa)
+      @component('components.card')
+        @slot('photo')
+          {{$pessoa['image']}}
+        @endslot
+        @slot('name')
+          {{$pessoa['nome']}}
+        @endslot
+        @slot('birth')
+          {{$pessoa['birth']}}
+        @endslot
+        @slot('age')
+          {{$pessoa['idade']}}
+        @endslot
+      @endcomponent
+    @endforeach
+  </section>
+</main>

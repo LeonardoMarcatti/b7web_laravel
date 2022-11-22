@@ -1,52 +1,32 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="https://cdn.iconscout.com/icon/free/png-256/html5-40-1175193.png" type="image/png" sizes="16x16">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous" defer></script>
-  <script src="https://kit.fontawesome.com/ec29234e56.js" crossorigin="anonymous" defer></script>
-  <title>Bem vindo</title>
-  <style>
-    body {
-      display: grid;
-      grid-template-columns: 1fr;
-      min-height: 100vh;
-      grid-template-rows: 50px minmax(calc(100vh - 80px), auto) 30px;
-    }
-
-    header {
-      background-color: gray;
-    }
-
-    main {
-      background-color: silver;
-    }
-
-    footer {
-      background-color: rgb(39, 39, 39);
-      color: white;
-      text-align: center;
-    }
-  </style>
-</head>
-
-<body>
-  <header>
-    <h1>Header</h1>
-  </header>
+  <?php
+  function teste($v1, $v2)
+  {
+    return $v1 + $v2;
+  }
+  ?>
   <main>
     <section>
-      <h2>Bem vindo</h2>
-
+      <h2>{{$message}}</h2>
+      <h3>{{teste(12,15)}}</h3>
+      <!-- Abaixo temos o código comentado onde o Blade não processa -->
+      <h3>{{--teste(1,1)--}}</h3>
+      <!-- Abaixo não escapamos elementos html e estamos sujeito a ataques cross scripting -->
+      {!!$html!!}
+      <!-- Aceita somente ternário -->
+      <h3>{{ ($message === 'Bem vindo')? 'OK' : 'Error!' }}</h3>
+      <!-- aso queiramos usar if/else devemos usar a seguinte estrutura -->
+      <h3>
+        @if($message === 'Bem vindo')
+          OK
+        @else
+          Error!
+        @endif
+      </h3>
+      <!-- Abaixo uma forma como o Blade ignora o que depois de arroba permitindo que o que tenha dentro das chaves seja processada por outros renderizadores front end tais como React, Angula ou Vue -->
+      @{!!$html!!}
+        <br>
+      @for($i=1; $i<=10; $i++)
+        <p>O valor é: {{$i}}</p>
+      @endfor
     </section>
   </main>
-  <footer>
-    <small>Footer</small>
-  </footer>
-</body>
-
-</html>

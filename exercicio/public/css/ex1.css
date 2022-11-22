@@ -1,0 +1,16 @@
+div {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  height: 50vh;
+  width: 15vw;
+  box-shadow: 0 0 10px gray;
+  padding: 10px;
+}
+
+div > img {
+  width: 90%;
+  box-shadow: 0 0 10px gray;
+  border-radius: 50%;
+}
