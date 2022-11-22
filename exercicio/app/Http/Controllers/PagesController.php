@@ -19,20 +19,20 @@ class PagesController extends Controller
       [ 
         'image' => 'https://i.pravatar.cc/150?img='.rand(0,50),  
         'nome' => 'Alessandro', 
-        'birth' => '29/01/90', 
+        'birth' => '1990-01-29', 
         'idade' => 29
       ],
       [ 
         'image' => 'https://i.pravatar.cc/150?img='.rand(0,50), 
         'nome' => 'Bonieky', 
-        'birth' => '10/11/1933', 
+        'birth' => '1932-11-10', 
         'idade' => 90
       ],
 
       [ 
         'image' => 'https://i.pravatar.cc/150?img='.rand(0,50), 
         'nome' => 'Maria', 
-        'birth' => '01/01/2020', 
+        'birth' => '2000-01-01', 
         'idade' => 28
       ]
     ];
