@@ -25,5 +25,5 @@ Route::controller(SiteController::class)->group(function () {
   Route::get('/usuarios/{qte?}', 'users');
   Route::get('/', 'index');
   Route::get('/comp', 'comp');
-  
+  Route::get('/include', 'include');
 });

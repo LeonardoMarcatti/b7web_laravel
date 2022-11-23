@@ -102,4 +102,12 @@ class SiteController extends Controller
       $dados['qte'] = $r->qte;
       return \view('/templates/header', $this->data) . \view('exercicio2', $dados) . \view('/templates/footer', $this->data);
    }
+
+   public function include()
+   {
+      $this->setFooter('Include');
+      $this->setTitle('Include');
+      $this->data['css'] = '';
+      return \view('/templates/header', $this->data) . \view('include', $this->data) . \view('/templates/footer', $this->data);
+   }
 }
