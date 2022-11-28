@@ -1,3 +1,10 @@
+section {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
 div {
   display: flex;
   flex-flow: column nowrap;

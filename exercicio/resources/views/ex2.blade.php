@@ -9,7 +9,8 @@
           {{$i}}
         @endslot
       @endcomponent -->
-      @include('components/photo', ['photo' => $url . $i, 'number' => $i])
+      <!-- Uma outra forma porém essa forma é para páginas estáticas -->
+      @include('components/photo', ['photo' => $url . $i, 'number' => $i]) 
     @endfor
   </section>
 </main>
