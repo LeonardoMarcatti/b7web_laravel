@@ -69,7 +69,7 @@ class PagesController extends Controller
     $this->data['header'] = 'Include';
     $this->data['footer'] = 'Include';
     $this->data['css'] = 'ex2.css';
-    $this->data['info'] = ['html' => "<h1>Um título qualquer</h1>" ];
+    $this->data['info'] = "<h1>Um título qualquer</h1>";
     return view('includes', $this->data);
   }
 

@@ -107,7 +107,7 @@ class SiteController extends Controller
    {
       $this->setFooter('Include');
       $this->setTitle('Include');
-      $this->data['css'] = '';
+      $this->data['css'] = 'components.css';
       return \view('/templates/header', $this->data) . \view('include', $this->data) . \view('/templates/footer', $this->data);
    }
 }

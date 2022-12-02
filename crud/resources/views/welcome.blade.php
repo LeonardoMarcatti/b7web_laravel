@@ -1,0 +1,25 @@
+@extends('layouts.layout_app')
+@section('top')
+   <x-top>
+      @slot('title')
+         {{$title}}
+      @endslot
+   </x-top>
+@endsection
+@section('content')
+   <header>
+      <h1>Header</h1>
+   </header>
+   <main>
+      <section>
+         <h2>Main</h2>
+      </section>
+   </main>
+@endsection
+@section('bottom')
+   <x-bottom>
+      @slot('footer')
+         {{$footer}}
+      @endslot
+   </x-bottom>
+@endsection
