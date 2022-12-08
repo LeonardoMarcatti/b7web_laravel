@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PagesController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\PostControllerBackup;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +16,15 @@ use App\Http\Controllers\PostController;
 */
 
 Route::controller(PostController::class)->group(function(){
-  Route::get('/posts/create', 'create');
+  Route::get('/', 'index');
+  Route::get('/create', 'create');
+  Route::get('/update', 'update');
+  Route::get('/delete', 'destroy');
+  Route::get('/read', 'show');
 });
 
-Route::get('/', [PagesController::class, 'index']);
+Route::controller(PostControllerBackup::class)->group(function(){
+  Route::get('/posts/read', 'read');
+  Route::get('/posts/updatemany', 'updateMany');
+  Route::get('/posts/deletemany', 'deleteMany');
+});
