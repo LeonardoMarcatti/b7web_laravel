@@ -111,7 +111,7 @@ class PagesController extends Controller
   public function layout()
   {
     $this->data['title'] = 'Layout';
-    $this->data['header'] = 'Layout';
+    $this->data['message'] = 'Mensagem vinda do Controller';
     $this->data['footer'] = 'Layout';
     $this->data['css'] = 'layout.css';
     return view('site', $this->data);

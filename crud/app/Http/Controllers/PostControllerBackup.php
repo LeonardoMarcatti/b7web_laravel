@@ -23,23 +23,6 @@ class PostControllerBackup extends Controller
         return $data;
     }
 
-    public function all(Request $r)
-    {
-        $this->post = new Post();
-        $posts = $this->post->all(); // Traz todos os dados
-
-        /*
-        * Oura forma seria assim
-        * $posts = Post::all(); 
-        */
-
-        return $posts;
-    }
-
-    public function update(Request $r)
-    {
-       
-    }
 
     public function updateMany(Request $r)
     {
@@ -50,11 +33,6 @@ class PostControllerBackup extends Controller
         ]);
 
         return $posts;
-    }
-
-    public function delete(Request $r)
-    {
-        
     }
 
     public function deleteMany(Request $r)

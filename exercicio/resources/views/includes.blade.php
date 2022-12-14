@@ -1,4 +1,4 @@
-@include('templates/header',['title' => $title])
+@include('templates/header')
 <main>
   <section>
     @include('components.include', ['html' => $info])

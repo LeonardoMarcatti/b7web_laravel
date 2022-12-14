@@ -12,7 +12,9 @@
 @endsection
 
 @section('content')
-  <x-c_test></x-c_test>
+  <x-c_content>
+    {{$message}}
+  </x-c_content>
 @endsection
 
 @section('bottom')

@@ -2,6 +2,7 @@
     <section>
       <h2>Introdução a Componentes</h2>
       <h3>{{$message}}</h3>
+      <p>Componentes são melhores para enviar pedaços de HTML bem como quando enviamos mais variáveis a sintaxe é melhor.</p>
       @foreach ($data as $ing)
       <div>
         <p>{{$ing}}</p>
