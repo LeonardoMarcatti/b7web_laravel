@@ -18,13 +18,13 @@ class PostController extends Controller
     public function index()
     {
         $this->post = new Post();
-        $posts = $this->post->all(); // Traz todos os dados
+        $posts = $this->post->get(); // Traz todos os dados
 
         /*
         * Oura forma seria assim
         * $posts = Post::all(); 
         */
-
+        
         return $posts;
     }
 
@@ -35,22 +35,20 @@ class PostController extends Controller
      */
     public function create()
     {
-        $new_post = ['title' =>'Meu primeiro post', 'content' => 'Que conteúdo blz!', 'author' => 'Leo' ];
-
         // Forma mais comum de inserir dados no banco
-        // $post = new Post($new_post);
-        // $post->save();
-        
+        $random = rand(0, 10000);
+        $new_post = ['title' => 'Meu post número ' . $random, 'content' => 'Que conteúdo blz!', 'author' => 'Leo' ];
+        $this->post = new Post($new_post);
+        $this->post->save();        
         
         //Outra forma
-        $this->post = new Post();
-        $this->post->title = 'Meu segundo post';
-        $this->post->content = 'Que conteúdo blz!';
-        $this->post->author = 'Leo';
-        $this->post->save();       
+        // $this->post = new Post();
+        // $this->post->title = 'Meu primeiro post';
+        // $this->post->content = 'Que conteúdo blz!';
+        // $this->post->author = 'Leo';
+        // $this->post->save();       
 
         // Imprime na tela um debug completo
-        dd($this->post);
     }
 
     /**
@@ -70,10 +68,10 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(int $id = 3)
     {
         $this->post = new Post();
-        $data = $this->post->select('id', 'title')->where('id', $id)->get(); // traz id e title onde o id = 1
+        $data = $this->post->select('id', 'title')->where('id', $id)->get(); // traz id e title onde o id = 3
 
         /*
         * Caso preciso é possível adicionar mais campos adicionando o nome do campo dentro do método select ou da forma abaixo. 
@@ -92,12 +90,7 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        $post = Post::find($id);
-        $post->title = 'Post atualizado';
-        $post->author = 'Seu Zé';
-        $post->content = 'Conteúdo atual';
-        $post->save();
-        return $post;
+      return null;
     }
 
     /**
@@ -109,12 +102,26 @@ class PostController extends Controller
      */
     public function update(Request $request)
     {
-        $post = Post::find(5);
-        $post->title = 'Post atualizado';
-        $post->author = 'Seu Zé';
-        $post->content = 'Conteúdo atual';
-        $post->save();
-        return $post;
+        $this->post = new Post();
+        $update = $this->post->where('id', '=', 5)->update([
+            'title' => 'Post atualizado',
+            'author' => 'Não sei',
+            'content' => 'Conteúdo atualizado'
+        ]);
+
+        return $update;
+        
+        /*
+        * Outra forma
+        */
+
+        /* $update = Post::where('id', '=', 5)->update([
+            'title' => 'Post atualizado',
+            'author' => 'Não sei',
+            'content' => 'Conteúdo atualizado'
+        ]);
+
+        return $update; */
     }
 
     /**
@@ -123,9 +130,9 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(int $id = 13)
     {
-        $post = Post::find($id);
-        return ($post) ? $post->delete() : 'Não encontrado' ;
+        $delete = Post::find($id);
+        return ($delete) ? $delete->delete() : 'Não encontrado' ;
     }
 }
