@@ -12,7 +12,13 @@
 @endsection
 
 @section('content')
-  <h3>{{$message}}</h3>
+<main>
+  <x-c_content>
+     @slot('slot')
+        {{$message}}
+     @endslot
+  </x-c_content>
+</main>
 @endsection
 
 @section('bottom')

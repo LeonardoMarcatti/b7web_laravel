@@ -130,7 +130,7 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(int $id = 13)
+    public function destroy(int $id = 2)
     {
         $delete = Post::find($id);
         return ($delete) ? $delete->delete() : 'Não encontrado' ;

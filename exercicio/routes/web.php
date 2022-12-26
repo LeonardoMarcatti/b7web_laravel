@@ -24,4 +24,5 @@ Route::controller(PagesController::class)->group( function() {
     Route::get('/if', 'includeIf');
     Route::get('ex1', 'exercicio1');
     Route::get('ex2/{qte}', 'exercicio2');
+    Route::get('test/{val}', 'test');
 });
