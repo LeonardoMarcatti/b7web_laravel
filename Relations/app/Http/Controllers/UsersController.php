@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Users;
 use Illuminate\Http\Request;
 
-
 class UsersController extends Controller
 {
     private object $model;
@@ -13,18 +12,27 @@ class UsersController extends Controller
     public function index()
     {
         $this->model = new Users();
-        $result = $this->model->select()->get();
+        $result = $this->model->all();
         return $result;
     }
 
     public function findOne(Request $r)
     {
-        return Users::find($r->id);
+        $this->model = new Users();
+        $user = $this->model->find($r->id);
+        if (!empty($user)) {
+            return $user;
+        };
+
+        return 'Não existe usuário com o id n° ' . $r->id ;
     }
 
-    public function findOneAddress(Request $r)
+    public function findUserAddresses(Request $r)
     {
-        return Users::find($r->id)->address;
+        $this->model = new Users();
+        $user = $this->model->find($r->id);
+        $user['addresses'] = $user->addresses;
+        return $user;
     }
 
     public function create(Request $r)

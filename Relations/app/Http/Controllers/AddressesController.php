@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 
 class AddressesController extends Controller
 {
+    private object $model; 
+
     public function index(Request $r)
     {
         return Addresses::get();
@@ -14,8 +16,10 @@ class AddressesController extends Controller
 
     public function findOne(Request $r)
     {
-        $id = $r->id;
-        return Addresses::select()->where('id', '=', $id)->get();
+        $this->model = new Addresses();
+        $address = $this->model->find($r->id);
+        $address['user'] = $address->user;
+        return $address;
     }
 
     public function create(Request $r)

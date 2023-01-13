@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -21,8 +20,9 @@ class Users extends Authenticatable
         'name',
         'email',
         'password',
-        'aaddress_id',
+        'address_id',
     ];
+
 
     /**
      * The attributes that should be hidden for serialization.
@@ -32,6 +32,7 @@ class Users extends Authenticatable
     protected $hidden = [
         'password',
         'remember_token',
+        'address_id'
     ];
 
     /**
@@ -43,8 +44,8 @@ class Users extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function address()
+    public function addresses()
     {
-        return $this->hasOne(Addresses::class, 'id', 'address_id');
+        return $this->hasMany(Addresses::class, 'user_id', 'id');
     }
 }
