@@ -114,16 +114,19 @@ class PagesController extends Controller
     $this->data['message'] = 'Mensagem vinda do Controller';
     $this->data['footer'] = 'Layout';
     $this->data['css'] = 'layout.css';
+    $this->data['app'] = 'app.css';
     return view('site', $this->data);
   }
 
   public function layout2()
   {
-    $this->data['title'] = 'Layout';
+    $this->data['title'] = 'Layout 2';
     $this->data['header'] = 'Layout';
-    $this->data['footer'] = 'Layout';
+    $this->data['footer'] = 'Layout 2';
     $this->data['css'] = 'layout2.css';
-    $this->data['message'] = 'Eu sou um conteúdo!';
+    $this->data['app'] = 'app2.css';
+    $this->data['aside'] = 'Conteúdo Aside';
+    $this->data['main'] = 'Eu sou main do layout 2!';
     return view('site2', $this->data);
   }
 }

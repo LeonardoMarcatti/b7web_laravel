@@ -1,4 +1,4 @@
-@extends('layouts.l_app')
+@extends('layouts.l_app2')
 
 @section('top')
   <x-c_top>
@@ -8,17 +8,22 @@
     @slot('css')
       {{$css}}
     @endslot
+    @slot('app')
+      {{$app}}
+    @endslot
   </x-c_top>
 @endsection
 
-@section('content')
-<main>
-  <x-c_content>
-     @slot('slot')
-        {{$message}}
-     @endslot
-  </x-c_content>
-</main>
+@section('aside')
+  <x-aside>
+    {{$aside}}
+  </x-aside>
+@endsection
+
+@section('main')
+  <x-main>
+    {{$main}}
+  </x-main>
 @endsection
 
 @section('bottom')

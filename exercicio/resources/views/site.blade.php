@@ -8,6 +8,9 @@
     @slot('css')
       {{$css}}
     @endslot
+    @slot('app')
+      {{$app}}
+    @endslot
   </x-c_top>
 @endsection
 
