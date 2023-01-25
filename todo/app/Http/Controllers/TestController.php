@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Category;
 
 class TestController extends Controller
 {
@@ -15,7 +16,12 @@ class TestController extends Controller
         $this->model = new User();
         $user = $this->model->find($id);
         $user['tasks'] = $user->tasks;
-        $user['categories'] = $user->categories;
+
+        $this->model = new Category();
+        foreach ($user['tasks'] as $key => $value) {
+            $user['tasks'][$key]->category = $this->model->find($value['category_id']);
+        }
+        
         return $user;
     }
 }

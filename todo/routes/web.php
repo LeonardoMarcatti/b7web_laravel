@@ -24,4 +24,5 @@ Route::controller(PagesController::class)->group( function(){
 
 Route::controller(TestController::class)->group( function(){
     Route::get('/test/{id}', 'index');
+    Route::get('/test/{id}/{task}', 'task');
 });
