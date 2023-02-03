@@ -1,0 +1,20 @@
+:root {
+  --backgound-light: #F0F2FA;
+  --backgound-white: #F6F5FF;
+  --text-dark: #0A0040;
+  --color-primary: #6143ff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Rubik', sans-serif;
+}
+
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--backgound-white);
+}

@@ -127,6 +127,7 @@ class PagesController extends Controller
     $this->data['app'] = 'app2.css';
     $this->data['aside'] = 'Conteúdo Aside';
     $this->data['main'] = 'Eu sou main do layout 2!';
+    $this->data['arr'] = ['banana', 'maçã', 'abacate'];
     return view('site2', $this->data);
   }
 }

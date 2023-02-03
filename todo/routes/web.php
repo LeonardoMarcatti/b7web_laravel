@@ -16,8 +16,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-
 Route::controller(PagesController::class)->group( function(){
     Route::get('/', 'index');
 });
@@ -25,4 +23,7 @@ Route::controller(PagesController::class)->group( function(){
 Route::controller(TestController::class)->group( function(){
     Route::get('/test/{id}', 'index');
     Route::get('/test/{id}/{task}', 'task');
+    Route::get('all/categories', 'getAll');
+    Route::get('task/{id}', 'getTask');
+    Route::get('user/{id}', 'getUserCategories');
 });

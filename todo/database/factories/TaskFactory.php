@@ -18,13 +18,16 @@ class TaskFactory extends Factory
      */
     public function definition()
     {
+
+        $category =  Category::all()->random();
+
         return [
             'user_id' => \rand(1,15),
             'description' => $this->faker->text(50),
             'date' => $this->faker->dateTime(),
             'title' => $this->faker->text(10),
-            'category_id' => Category::all()->random(),
-            'user_id' => User::all()->random()
+            'category_id' => $category,
+            'user_id' => $category->user
         ];
     }
 }
