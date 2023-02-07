@@ -9,6 +9,6 @@ class PagesController extends Controller
 {
     public function index()
     {
-        return \view('layouts/home');
+        return \view('layouts/layout_home');
     }
 }
