@@ -86,3 +86,81 @@ main {
 .graph_header_subtitle {
   margin-top: 10px;
 }
+
+.graph-placeholder {
+  background-color: #ccc;
+  width: 300px;
+  height: 300px;
+  margin-top: 20px;
+  margin-left: 35px;
+}
+
+.graph_header_tasks_left {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.list {
+  padding: 10px 15px;
+  background-color: #ddd;
+  flex: 1;
+}
+
+.list_header {
+  display: flex;
+}
+
+
+.task_list {
+  display:  flex;
+  flex-flow: column nowrap;
+  margin-top: 20px;
+}
+
+.task {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px 15px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid var(--backgound-light);
+}
+
+.task:hover {
+  background-color: var(--backgound-light);
+}
+
+.title {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  flex: 1;
+}
+
+.priority, .actions {
+  flex: 1;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.actions {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.sphere {
+  width: 22px;
+  height: 22px;
+  background-color: tomato;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.task_title {
+  padding-left: 10px;
+  font-weight: bold;
+}

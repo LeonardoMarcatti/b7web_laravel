@@ -32,9 +32,58 @@
             <div class="graph_header_subtitle">
               Tarefas: <b>3/6</b> 
             </div>
+            <div class="graph-placeholder">
+
+            </div>
+            <p class="graph_header_tasks_left">Restam 3 tarefas para serem realizadas</p>
           </section>
           <section class="list">
-            Lista
+            <div class="list_header">
+              <select name="" id="" class="list_header_select">
+                <option value="0">Todas as Tarefas</option>
+              </select>
+            </div>
+            <div class="task_list">
+              <div class="task">
+                <div class="title">
+                  <input type="checkbox" name="" id="">
+                  <div class="task_title">Título da tarefa</div>
+                </div>
+                <div class="priority">
+                  <div class="sphere"></div>
+                  <div>Título da tarefa</div>
+                </div>
+                <div class="actions">
+                  <p>Editar - Excluir</p>
+                </div>
+              </div>
+              <div class="task">
+                <div class="title">
+                  <input type="checkbox" name="" id="">
+                  <div class="task_title">Título da tarefa</div>
+                </div>
+                <div class="priority">
+                  <div class="sphere"></div>
+                  <div>Título da tarefa</div>
+                </div>
+                <div class="actions">
+                  <p>Editar - Excluir</p>
+                </div>
+              </div>
+              <div class="task">
+                <div class="title">
+                  <input type="checkbox" name="" id="">
+                  <div class="task_title">Título da tarefa</div>
+                </div>
+                <div class="priority">
+                  <div class="sphere"></div>
+                  <div>Título da tarefa</div>
+                </div>
+                <div class="actions">
+                  <p>Editar - Excluir</p>
+                </div>
+              </div>
+            </div>
           </section>
         </main>
       </div>
