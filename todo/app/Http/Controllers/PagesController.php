@@ -3,12 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\User;
 
 class PagesController extends Controller
 {
+    private array $data;
+
     public function index()
     {
-        return \view('layouts/layout_home');
+        $this->data['tab'] = 'ToDo - Home';
+        return \view('home', $this->data);
+    }
+
+    public function login()
+    {
+        $this->data['tab'] = 'ToDo - Login';
+        $this->data['message'] = 'Login aqui';
+        return \view('login', $this->data);
     }
 }

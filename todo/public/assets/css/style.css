@@ -1,5 +1,5 @@
 :root {
-  --backgound-light: #F0F2FA;
+  --backgound-light: lightgray;
   --backgound-white: #F6F5FF;
   --text-dark: #0A0040;
   --color-primary: #6143ff;
@@ -13,6 +13,24 @@
   color: var(--text-dark) !important;
 }
 
+#links {
+  background-color: var(--color-primary);
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+#links > a {
+  margin: 5px 10px;
+  color: var(--backgound-white) !important;
+}
+
+#links > a:hover {
+  color: var(--text-dark) !important;
+}
+
 .my_container {
   width: 100vw;
   height: 100vh;
@@ -23,6 +41,10 @@
 .sidebar {
   width: 100px;
   background-color: var(--color-primary);
+}
+
+.sidebar > img {
+  max-width: 100%;
 }
 
 nav {
@@ -45,6 +67,14 @@ body {
 .btn {
   padding: 20px 30px;
   border-radius: 10px;
+  border: 1px solid var(--backgound-white);
+  transition: all .25s ease-in-out;
+}
+
+.btn:hover {
+  background-color: var(--backgound-white);
+  color: var(--color-primary) !important;
+  border: 1px solid var(--color-primary);
 }
 
 .btn-primary {
@@ -75,12 +105,19 @@ main {
 
 .graph_header > h2 {
   display: inline-block;
+  font-size: 18px;
 }
 
 .graph_header > hr {
-  flex: 1;
-  width: 50px;
+  width: 100px;
   display: inline-block;
+}
+
+.graph_header_date {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
 }
 
 .graph_header_subtitle {
@@ -88,21 +125,23 @@ main {
 }
 
 .graph-placeholder {
-  background-color: #ccc;
   width: 300px;
   height: 300px;
   margin-top: 20px;
   margin-left: 35px;
+  background-image: url('../images/graph.png');
+  background-size: contain;
 }
 
 .graph_header_tasks_left {
   text-align: center;
-  margin-top: 10px;
+  margin: 0;
+  padding: 0;
 }
 
 .list {
   padding: 10px 15px;
-  background-color: #ddd;
+  background-color: var(--backgound-white);
   flex: 1;
 }
 
@@ -110,6 +149,12 @@ main {
   display: flex;
 }
 
+.list_header_select {
+  background-color: transparent;
+  border: none;
+  font-size: 15px;
+  color: var(--text-dark)
+}
 
 .task_list {
   display:  flex;
@@ -124,11 +169,14 @@ main {
   justify-content: space-around;
   padding: 20px 15px;
   margin-bottom: 5px;
-  border-bottom: 1px solid var(--backgound-light);
+  border-bottom: 1px solid gray;
+  transition: all .2s ease-in-out;
 }
 
 .task:hover {
   background-color: var(--backgound-light);
+  transform: scale(1.05);
+  border-radius: 10px;
 }
 
 .title {
@@ -150,6 +198,23 @@ main {
   flex-flow: row nowrap;
   align-items: center;
   justify-content: flex-end;
+}
+
+.actions > a {
+  margin: 0 10px;
+  transition: all 0.2s ease-in-out;
+}
+
+.actions > a:hover {
+  transform: scale(1.5);
+}
+
+.tasks_left_footer {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
 }
 
 .sphere {

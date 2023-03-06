@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\PagesController;
-use App\Http\Controllers\TestController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -16,8 +17,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::controller(PagesController::class)->group( function(){
-    Route::get('/', 'index');
+Route::controller(HomeController::class)->group( function(){
+    Route::get('/', 'index')->name('home');
+});
+
+Route::controller(TaskController::class)->group(function(){
+    Route::get('/task/new', 'create')->name('taskCreate');
+    Route::get('/task', 'view')->name('taskView');
+});
+
+Route::controller(AuthController::class)->group( function(){
+    Route::get('/login', 'index')->name('login');
+    Route::get('/logup', 'logup')->name('logup');
 });
 
 Route::controller(TestController::class)->group( function(){
