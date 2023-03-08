@@ -88,7 +88,7 @@ a {
 
 main {
   display: flex;
-  padding: 20px;
+  padding: 5px;
 }
 
 .graph {
@@ -166,7 +166,7 @@ main {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   padding: 20px 15px;
   margin-bottom: 5px;
   border-bottom: 1px solid gray;
@@ -187,10 +187,14 @@ main {
 }
 
 .priority, .actions {
-  flex: 1;
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
+}
+
+.priority {
+  justify-content: flex-start;
+  flex: 2;
 }
 
 .actions {
@@ -198,6 +202,7 @@ main {
   flex-flow: row nowrap;
   align-items: center;
   justify-content: flex-end;
+  flex: 1;
 }
 
 .actions > a {

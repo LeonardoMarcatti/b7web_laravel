@@ -39,16 +39,9 @@
         </select>
       </div>
       <div class="task_list">
-        @php
-          $tasks = [
-              ['done' => false, 'title' => 'Primeira task', 'category' => 'Catagory 1', 'edit_url' => '#', 'delete_url' => '#'],
-              ['done' => true, 'title' => 'Segunda task', 'category' => 'Catagory 2', 'edit_url' => '#', 'delete_url' => '#'],
-              ['done' => false, 'title' => 'Tarceira task', 'category' => 'Catagory 1', 'edit_url' => '#', 'delete_url' => '#'],
-            ];
-        @endphp
-        <x-task :data=$tasks[0]/>
-        <x-task :data=$tasks[1]/>
-        <x-task :data=$tasks[2]/>
+        @foreach($tasks as $task)
+          <x-task :data=$task/>
+        @endforeach
       </div>
     </section>
   @endslot

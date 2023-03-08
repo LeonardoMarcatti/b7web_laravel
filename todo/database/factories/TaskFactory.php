@@ -22,7 +22,7 @@ class TaskFactory extends Factory
         $category =  Category::all()->random();
 
         return [
-            'user_id' => \rand(1,15),
+            'done' => $this->faker->boolean(),
             'description' => $this->faker->text(50),
             'date' => $this->faker->dateTime(),
             'title' => $this->faker->text(10),

@@ -23,18 +23,12 @@ Route::controller(HomeController::class)->group( function(){
 
 Route::controller(TaskController::class)->group(function(){
     Route::get('/task/new', 'create')->name('taskCreate');
-    Route::get('/task', 'view')->name('taskView');
+    Route::get('/task/{id}', 'index')->name('taskView');
+    Route::get('/task/edit/{id}', 'edit')->name('taskEdit');
+    Route::get('/task/delete/{id}', 'delete')->name('taskDelete');
 });
 
 Route::controller(AuthController::class)->group( function(){
     Route::get('/login', 'index')->name('login');
     Route::get('/logup', 'logup')->name('logup');
-});
-
-Route::controller(TestController::class)->group( function(){
-    Route::get('/test/{id}', 'index');
-    Route::get('/test/{id}/{task}', 'task');
-    Route::get('all/categories', 'getAll');
-    Route::get('task/{id}', 'getTask');
-    Route::get('user/{id}', 'getUserCategories');
 });
