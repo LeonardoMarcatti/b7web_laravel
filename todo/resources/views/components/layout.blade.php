@@ -23,9 +23,9 @@
           <a href="<?= route('login') ?>">Login</a>
           <a href="<?= route('home') ?>">Home</a>
         </span>
-        <nav>
-          {{$btn ?? null}}
-        </nav>
+        @if(!empty($btn))
+          <nav>{{$btn}}</nav>
+        @endif
         <main>
           {{$main}}
         </main>

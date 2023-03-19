@@ -2,9 +2,6 @@
     @slot('tab')
         {{$tab}}
     @endslot
-    @slot('main')
-        {{$message}}
-    @endslot
     @slot('btn')
         <x-btn>
             @slot('text')
@@ -14,5 +11,8 @@
                 logup
             @endslot
         </x-btn>
+    @endslot
+    @slot('main')
+        {{$message}}
     @endslot
 </x-layout>

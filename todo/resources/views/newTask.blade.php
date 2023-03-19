@@ -1,8 +1,19 @@
-<x-layout>
-  @slot('tab')
-    {{$tab}}
-  @endslot
+<x-layout tab="{{$tab}}">
   @slot('main')
-    {{$message}}
+    <section id="create_task_section">
+      <h1>Criar Tarefa</h1>
+        <form action="" method="post">
+          <x-form.input for="title" label="Título da Task" type="text" placeholder="Digite o título" required="required"></x-form.input>
+          <x-form.select for="category" label="Selecione a Categoria" required="required" >
+            @foreach($categories as $cat)
+              <option value="{{$cat['id']}}">{{$cat['description']}}</option>
+            @endforeach
+          </x-form.select>
+          <x-form.input for="date" label="Data de Realização" type="date" required="required"></x-form.input>
+          <x-form.textArea for="desc" label="Descrição" placeholder="Digite uma descrição para sua tarefa" required="required" />
+          <x-form.formButton />
+        </form>
+    </section>
   @endslot
 </x-layout>
+

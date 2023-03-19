@@ -40,7 +40,7 @@
       </div>
       <div class="task_list">
         @foreach($tasks as $task)
-          <x-task :data=$task/>
+          <x-task :data=$task />
         @endforeach
       </div>
     </section>

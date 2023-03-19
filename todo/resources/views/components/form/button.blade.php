@@ -1,0 +1,1 @@
+<button type="{{$type}}" class="btn {{isset($subclass) ? $subclass : ''}}" >{{$txt}}</button>

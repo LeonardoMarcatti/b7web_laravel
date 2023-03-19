@@ -3,16 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\Models\Task;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class TaskController extends Controller
 {
     private array $data;
+    private object $category;
+    private object $task;
 
     public function index(Request $r)
     {
-        $tasks = new Task();
-        $this->data['tasks'] = $tasks->select()->take(10)->get();
+        $this->task = new Task();
+        $this->data['tasks'] = $this->task->select()->take(10)->get();
 
         return "<h1>View: " . $r->id . "</h1>";
     }
@@ -26,11 +29,14 @@ class TaskController extends Controller
     {
         $this->data['tab'] = 'Nova Tarefa';
         $this->data['message'] =  'Nova tarefa';
+        $this->category = new Category();
+        $categoriesList = $this->category::all();
+        $this->data['categories'] = $categoriesList;
         return view('newTask', $this->data);
     }
 
     public function delete(Request $r)
     {
-        return \redirect()->route('home');
+        return "<h1>Delete: " . $r->id . "</h1>";
     }
 }

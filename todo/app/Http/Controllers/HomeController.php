@@ -13,9 +13,9 @@ class HomeController extends Controller
     public function index()
     {
 
-        $model = new Task();
+        $this->model = new Task();
         $this->data['tab'] = 'ToDo - Home';
-        $this->data['tasks'] = $model->select()->take(5)->get();
+        $this->data['tasks'] = $this->model->select()->take(5)->get();
         return \view('home', $this->data);
     }
 
