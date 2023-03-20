@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('description');
             $table->dateTime('date');
             $table->string('title');
-            $table->integer('done');
+            $table->integer('done')->default(0);
             $table->unsignedBigInteger('category_id');
         });
     }

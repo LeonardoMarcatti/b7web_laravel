@@ -35,6 +35,15 @@ class TaskController extends Controller
         return view('newTask', $this->data);
     }
 
+    public function createAction(Request $r)
+    {
+        $data = $r->only(['title', 'category_id', 'date', 'description']);
+        $data['user_id'] = 1;
+        $task = new Task();
+        $create = $task->create($data);
+        return \redirect(route('home'));
+    }
+
     public function delete(Request $r)
     {
         return "<h1>Delete: " . $r->id . "</h1>";
