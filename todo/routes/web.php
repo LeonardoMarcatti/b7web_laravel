@@ -25,7 +25,8 @@ Route::controller(TaskController::class)->group(function(){
     Route::get('/task/new', 'create')->name('taskCreate');
     Route::post('/task/create', 'createAction')->name('taskCreateAction');
     Route::get('/task/{id}', 'index')->name('taskView');
-    Route::get('/task/edit/{id}', 'edit')->name('taskEdit');
+    Route::get('/task/edit/{id}', 'getTask')->name('taskEdit');
+    Route::post('/task/editAction', 'edit')->name('taskEditAction');
     Route::get('/task/delete/{id}', 'delete')->name('taskDelete');
 });
 

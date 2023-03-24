@@ -1,3 +1,1 @@
-<a href="{{$link}}" class="btn btn-primary">
-  {{$text}}
-</a>
+<a href={{route("$link")}} class="btn btn-primary">{{$text}}</a>

@@ -8,7 +8,7 @@
           Nova Tarefa
       @endslot
       @slot('link')
-          task/new
+          taskCreate
       @endslot
     </x-btn>
   @endslot

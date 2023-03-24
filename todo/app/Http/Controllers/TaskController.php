@@ -20,9 +20,25 @@ class TaskController extends Controller
         return "<h1>View: " . $r->id . "</h1>";
     }
 
+    public function getTask(Request $r)
+    {
+        $id = $r->id;
+        $this->task = new Task();
+        $this->data['task'] = $this->task->find($id);
+        $this->data['tab'] = 'Editar Tarefa';
+        $this->category = new Category();
+        $categoriesList = $this->category::all();
+        $this->data['categories'] = $categoriesList;
+        if (!$this->data) {
+            return \redirect(route('home'));
+        };
+
+        return view('taskEdit', $this->data);
+    }
+
     public function edit(Request $r)
     {
-        return "<h1>Edit: " . $r->id . "</h1>";
+        return 'ok';
     }
 
     public function create(Request $r)
