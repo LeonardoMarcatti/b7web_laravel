@@ -22,4 +22,21 @@ class Task extends Model
     {
         return $this->belongsTo(Category::class, 'category_id', 'id');
     }
+
+    public function updateTask(array $data)
+    {
+        $this->where('id', $data['id'])->update(['description' => $data['description'], 'date' => $data['date'],  'title' => $data['title'], 'category_id' => $data['category_id'], 'done' => $data['done']]);
+        return true;
+    }
+
+    public function getTask(string $id)
+    {
+        return $this->find($id);
+    }
+
+    public function deleteTask(string $id)
+    {
+        $this->where('id', $id)->delete();
+        return true;
+    }
 }

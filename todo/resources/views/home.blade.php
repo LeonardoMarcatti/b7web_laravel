@@ -1,16 +1,6 @@
-<x-layout>
-  @slot('tab')
-    {{$tab}}
-  @endslot
+<x-layout tab="{{$tab}}" authUser="{{$authUser ?? ''}}">
   @slot('btn')
-    <x-btn>
-      @slot('text')
-          Nova Tarefa
-      @endslot
-      @slot('link')
-          taskCreate
-      @endslot
-    </x-btn>
+    <x-btn text="Nova Tarefa" link="taskCreate" />
   @endslot
   @slot('main')
     <section class="graph">
@@ -24,7 +14,7 @@
         </div>
       </div>
       <div class="graph_header_subtitle">
-        Tarefas: <b>3/6</b> 
+        Tarefas: <b>3/6</b>
       </div>
       <div class="graph-placeholder"></div>
       <div class="tasks_left_footer">
@@ -44,5 +34,22 @@
         @endforeach
       </div>
     </section>
+    <script >
+      const taskUpdate = async param =>  {
+        const status = param.checked
+        const id = param.id
+        const result = await fetch(url, {
+          method: 'post',
+          headers:{
+            'Content-type' : 'application/json',
+            'accept': 'application/json'
+          },
+          body: JSON.stringify({status, id})
+        })
+
+        const json = await result.json()
+        console.log(status);
+      };
+    </script>
   @endslot
 </x-layout>

@@ -18,16 +18,15 @@
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
-  justify-content: flex-end;
-  width: 100%;
+  justify-content: space-between;
 }
 
-#links > a {
+#links a {
   margin: 5px 10px;
   color: var(--backgound-white) !important;
 }
 
-#links > a:hover {
+#links a:hover {
   color: var(--text-dark) !important;
 }
 
@@ -92,7 +91,6 @@ a {
 
 main {
   display: flex;
-  padding: 5px;
 }
 
 .graph {
@@ -179,7 +177,6 @@ main {
 
 .task:hover {
   background-color: var(--backgound-light);
-  transform: scale(1.05);
   border-radius: 10px;
 }
 
@@ -241,12 +238,11 @@ main {
 
 #task_section {
   margin:  auto;
-  padding-top: 20px;
+  padding-top: 10px;
 }
 
 #task_section > h1 {
   text-align: center;
-  margin-bottom: 20px;
 }
 
 .inputArea {

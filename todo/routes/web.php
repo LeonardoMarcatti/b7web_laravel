@@ -17,20 +17,28 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::controller(HomeController::class)->group( function(){
-    Route::get('/', 'index')->name('home');
+    Route::get('/', 'index')->middleware('auth')->name('home');
 });
 
-Route::controller(TaskController::class)->group(function(){
-    Route::get('/task/new', 'create')->name('taskCreate');
-    Route::post('/task/create', 'createAction')->name('taskCreateAction');
-    Route::get('/task/{id}', 'index')->name('taskView');
-    Route::get('/task/edit/{id}', 'getTask')->name('taskEdit');
-    Route::post('/task/editAction', 'edit')->name('taskEditAction');
-    Route::get('/task/delete/{id}', 'delete')->name('taskDelete');
+Route::middleware(['auth'])->group(function(){
+    Route::controller(TaskController::class)->group(function(){
+        Route::get('/task/new', 'create')->name('taskCreate');
+        Route::post('/task/create', 'createAction')->name('taskCreateAction');
+        Route::get('/task/{id}', 'index')->name('taskView');
+        Route::get('/task/edit/{id}', 'getTask')->name('taskEdit');
+        Route::get('/task/taskUpdate', 'taskUpdate')->name('taskUpdate');
+        Route::post('/task/editAction', 'edit')->name('taskEditAction');
+        Route::get('/task/delete/{id}', 'redirectDelete')->name('redirectDelete');
+        Route::get('/task/sure/{id}', 'delete')->name('sure');
+    });
 });
 
 Route::controller(AuthController::class)->group( function(){
     Route::get('/login', 'index')->name('login');
+    Route::post('/loginAction', 'loginAction')->name('loginAction');
     Route::get('/logup', 'logup')->name('logup');
+    Route::post('/logupAction', 'logupAction')->name('logupAction');
+    Route::get('/logout', 'logout')->name('logout');
 });
