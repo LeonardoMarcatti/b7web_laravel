@@ -14,7 +14,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ URL::asset('assets/css/style.css') }}">
   </head>
-
   <body>
     <div class="my_container">
       <div class="sidebar"><img src="{{ URL::asset('assets/images/logo.png') }}" alt="" srcset=""></div>
@@ -23,15 +22,14 @@
           <p>{{$authUser?? ''}}</p>
           <div>
             @if(!$authUser)
-              @if($links === false)
-              <a href="<?= route('login') ?>">Login</a>
-              <a href="<?= route('home') ?>">Home</a>
-              @endif
-              @if($links === 'login')
+              @if($links === 'logup')
                 <a href="<?= route('login') ?>">Login</a>
               @endif
             @endif            
             @if($authUser)
+              @if($links != 'home')
+                <a href="<?= route('home') ?>">Voltar</a>
+              @endif
               <a href="<?= route('logout') ?>">Sair</a>
             @endif
           </div>

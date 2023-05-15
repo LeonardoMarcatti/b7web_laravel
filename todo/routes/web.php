@@ -28,8 +28,8 @@ Route::middleware(['auth'])->group(function(){
         Route::post('/task/create', 'createAction')->name('taskCreateAction');
         Route::get('/task/{id}', 'index')->name('taskView');
         Route::get('/task/edit/{id}', 'getTask')->name('taskEdit');
-        Route::get('/task/taskUpdate', 'taskUpdate')->name('taskUpdate');
         Route::post('/task/editAction', 'edit')->name('taskEditAction');
+        Route::post('/task/taskUpdate', 'taskUpdate')->name('taskUpdate');
         Route::get('/task/delete/{id}', 'redirectDelete')->name('redirectDelete');
         Route::get('/task/sure/{id}', 'delete')->name('sure');
     });

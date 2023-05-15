@@ -1,4 +1,4 @@
-<x-layout tab="{{$tab}}" authUser="{{$authUser}}">
+<x-layout tab="{{$tab}}" authUser="{{$authUser}}" links="{{$links}}">
   @slot('main')
     <section id="task_section">
       <h1>Editar Tarefa</h1>

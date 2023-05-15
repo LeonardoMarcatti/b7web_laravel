@@ -31,14 +31,15 @@
 }
 
 .my_container {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-flow: row nowrap;
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  min-height: 100vh;
+  grid-template-rows: 50px minmax(calc(100vh - 80px), auto) 30px;
 }
 
 .sidebar {
-  width: 100px;
+  grid-column: 1/2;
+  height: 100vh;
   background-color: var(--color-primary);
 }
 
@@ -48,7 +49,6 @@
 
 nav {
   height: 100px;
-  width: calc(100vw - 100px);
   background-color: gray;
   display: flex;
   flex-flow: row nowrap;
@@ -58,7 +58,7 @@ nav {
 }
 
 .content {
-  width: 100%;
+  grid-column: 2/21;
 }
 
 body {
@@ -91,6 +91,7 @@ a {
 
 main {
   display: flex;
+  width: 100%;
 }
 
 .graph {
@@ -162,6 +163,7 @@ main {
   display:  flex;
   flex-flow: column nowrap;
   margin-top: 20px;
+  width: 100%;
 }
 
 .task {
@@ -237,11 +239,14 @@ main {
 }
 
 #task_section {
-  margin:  auto;
-  padding-top: 10px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
-#task_section > h1 {
+#task_section > h1, #task_section > div {
   text-align: center;
 }
 

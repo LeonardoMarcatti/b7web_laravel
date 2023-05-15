@@ -29,7 +29,7 @@ class AuthController extends Controller
         }
         $this->data['tab'] = 'ToDo - Logup';
         $this->data['authUser'] = null;
-        $this->data['links'] = 'login';
+        $this->data['links'] = 'logup';
         return view('logup', $this->data);
     }
 
@@ -37,7 +37,6 @@ class AuthController extends Controller
     {
         $r->validate(['name' => 'required', 'email' => 'required|email|unique:users', 'password' => 'required|min:6|confirmed']);
         $data = $r->all();
-        dd($data);
         $data['password'] = Hash::make($data['password']);
         $this->model = new User();
         $creted = $this->model->createUser($data);

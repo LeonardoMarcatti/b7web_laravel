@@ -34,6 +34,7 @@ class TaskController extends Controller
         $this->model = new Task();
         $this->data['task'] = $this->model->getTask($id);
         $this->data['tab'] = 'Editar Tarefa';
+        $this->data['links'] = 'edit';
         $this->getAuthUser();
         $this->category = new Category();
         $categoriesList = $this->category->getCatagories();
@@ -63,7 +64,14 @@ class TaskController extends Controller
 
     public function taskUpdate(Request $r)
     {
-        \dd($r->all());
+        $this->model = new Task();
+        $task = $this->model->getTask($r->id);
+        if ($task) {
+            $task->done = $r->status;
+            $task->save();
+            return ['success' => true];
+        }
+        return ['success' => false];
     }
 
     public function create(Request $r)
@@ -73,6 +81,7 @@ class TaskController extends Controller
         $this->category = new Category();
         $categoriesList = $this->category::all();
         $this->data['categories'] = $categoriesList;
+        $this->data['links'] = 'create';
         return view('newTask', $this->data);
     }
 
@@ -89,6 +98,7 @@ class TaskController extends Controller
     {
         $this->data['tab'] = 'Deletar';
         $this->data['id'] = $r->id;
+        $this->data['links'] = 'delete';
         $this->getAuthUser();
         $this->model = new Task();
         $foundTask = $this->model->getTask($r->id);

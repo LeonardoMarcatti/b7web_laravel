@@ -1,4 +1,4 @@
-<x-layout tab="{{$tab}}" authUser="{{$authUser ?? ''}}">
+<x-layout tab="{{$tab}}" authUser="{{$authUser ?? ''}}" links="{{$links ?? ''}}">
   @slot('btn')
     <x-btn text="Nova Tarefa" link="taskCreate" />
   @endslot
@@ -8,9 +8,9 @@
         <h2>Progresso do Dia</h2>
         <hr>
         <div class="graph_header_date">
-        <img src={{ URL::asset("assets/images/icon-prev.png") }} alt="">
-        13/Dez/2023
-        <img src={{ URL::asset("assets/images/icon-next.png") }} alt="">
+        <a href="{{route('home', ['date' => $prev_date_btn])}}"><img src={{ URL::asset("assets/images/icon-prev.png") }} alt=""></a>
+        {{$date_as_string}}
+        <a href="{{route('home', ['date'=> $next_date_btn])}}"><img src={{ URL::asset("assets/images/icon-next.png") }} alt=""></a>
         </div>
       </div>
       <div class="graph_header_subtitle">
@@ -37,6 +37,7 @@
     <script >
       const taskUpdate = async param =>  {
         const status = param.checked
+        const url = "{{route('taskUpdate')}}";
         const id = param.id
         const result = await fetch(url, {
           method: 'post',
@@ -44,11 +45,17 @@
             'Content-type' : 'application/json',
             'accept': 'application/json'
           },
-          body: JSON.stringify({status, id})
+          body: JSON.stringify({status, id, _token: '{{csrf_token()}}'})
         })
 
         const json = await result.json()
-        console.log(status);
+
+        if (json.success) {
+          alert('Tarefa atualizada com sucesso!')
+        } else {
+          param.checked = !param.checked
+        }
+        
       };
     </script>
   @endslot
