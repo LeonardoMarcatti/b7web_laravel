@@ -24,14 +24,16 @@ Route::controller(HomeController::class)->group( function(){
 
 Route::middleware(['auth'])->group(function(){
     Route::controller(TaskController::class)->group(function(){
-        Route::get('/task/new', 'create')->name('taskCreate');
-        Route::post('/task/create', 'createAction')->name('taskCreateAction');
-        Route::get('/task/{id}', 'index')->name('taskView');
-        Route::get('/task/edit/{id}', 'getTask')->name('taskEdit');
-        Route::post('/task/editAction', 'edit')->name('taskEditAction');
-        Route::post('/task/taskUpdate', 'taskUpdate')->name('taskUpdate');
-        Route::get('/task/delete/{id}', 'redirectDelete')->name('redirectDelete');
-        Route::get('/task/sure/{id}', 'delete')->name('sure');
+        Route::prefix('/task')->group(function(){
+            Route::get('/new', 'create')->name('taskCreate');
+            Route::post('/create', 'createAction')->name('taskCreateAction');
+            Route::get('/{id}', 'index')->name('taskView');
+            Route::get('/edit/{id}', 'getTask')->name('taskEdit');
+            Route::post('/editAction', 'edit')->name('taskEditAction');
+            Route::post('/taskUpdate', 'taskUpdate')->name('taskUpdate');
+            Route::get('/delete/{id}', 'redirectDelete')->name('redirectDelete');
+            Route::get('/sure/{id}', 'delete')->name('sure');
+        });
     });
 });
 

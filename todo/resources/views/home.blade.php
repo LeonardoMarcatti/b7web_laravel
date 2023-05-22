@@ -24,8 +24,10 @@
     </section>
     <section class="list">
       <div class="list_header">
-        <select name="" id="" class="list_header_select">
+        <select name="" id="" class="list_header_select" onchange="selectTaskStatus(this)">
           <option value="0">Todas as Tarefas</option>
+          <option value="1">Tarefas pendentes</option>
+          <option value="2">Tarefas realizadas</option>
         </select>
       </div>
       <div class="task_list">
@@ -57,6 +59,17 @@
         }
         
       };
+      const selectTaskStatus = e => {
+        if (e.value === '1') {
+          document.querySelectorAll('.done').forEach(el => el.style.display = 'none')
+          document.querySelectorAll('.pending').forEach(el => el.style.display = '')
+          
+        } else if(e.value === '2'){
+          document.querySelectorAll('.pending').forEach(el => el.style.display = 'none')
+          document.querySelectorAll('.done').forEach(el => el.style.display = '')
+        }
+      }
+
     </script>
   @endslot
 </x-layout>
