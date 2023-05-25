@@ -52,7 +52,7 @@
 
         const json = await result.json()
 
-        if (json.success) {
+        if (json) {
           alert('Tarefa atualizada com sucesso!')
         } else {
           param.checked = !param.checked
@@ -66,6 +66,9 @@
           
         } else if(e.value === '2'){
           document.querySelectorAll('.pending').forEach(el => el.style.display = 'none')
+          document.querySelectorAll('.done').forEach(el => el.style.display = '')
+        } else {
+          document.querySelectorAll('.pending').forEach(el => el.style.display = '')
           document.querySelectorAll('.done').forEach(el => el.style.display = '')
         }
       }

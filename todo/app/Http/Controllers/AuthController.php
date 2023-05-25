@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
 {
@@ -47,8 +48,8 @@ class AuthController extends Controller
 
     public function loginAction(Request $r)
     {
-        $valid = $r->validate(['email' => 'required|email', 'password' => 'required|min:6']);
-        
+        $valid = $r->validate(['email' => 'required|email', 'password' => 'required|min:6'], ['email.required' => 'O campo de email é obrigatório', 'email.email' => 'O campo deve ser um email válido.', 'password.required' => 'A senha é obrigatória','password.min' => 'Senha fraca']);
+
         if (Auth::attempt($valid)) {
             return \redirect(route('home'));
         }

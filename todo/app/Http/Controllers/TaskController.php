@@ -69,9 +69,9 @@ class TaskController extends Controller
         if ($task) {
             $task->done = $r->status;
             $task->save();
-            return ['success' => true];
+            return true;
         }
-        return ['success' => false];
+        return false;
     }
 
     public function create(Request $r)

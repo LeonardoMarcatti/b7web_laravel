@@ -21,8 +21,8 @@
       @endif
         <form action="{{route('loginAction')}}" method="post">
           @csrf
-          <x-form.input for="email" label="Seu email:" type="email" placeholder="Digite seu email" required="required" />
-          <x-form.input for="password" label="Sua senha:" type="password" placeholder="Digite a senha" required="required" />
+          <x-form.input for="email" label="Seu email:" type="email" placeholder="Digite seu email"  />
+          <x-form.input for="password" label="Sua senha:" type="password" placeholder="Digite a senha" />
           <x-form.formButton txt="Entrar"/>
         </form>
     </section>
