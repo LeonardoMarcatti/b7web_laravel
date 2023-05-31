@@ -2,9 +2,10 @@
 
 namespace App\Mail;
 
+use Illuminate\Mail\Mailables\Address;
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
+use Illuminate\Mail\Mailables\Attachment;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
@@ -13,7 +14,7 @@ class RegisterMail extends Mailable
 {
     use Queueable, SerializesModels;
   
-    public $data;
+    public array $data;
   
     /**
      * Create a new message instance.
@@ -30,6 +31,10 @@ class RegisterMail extends Mailable
     {
         return new Envelope(
             subject: 'Demo Mail',
+            from: new Address('leonardomarcatti@hotmail.com', 'Leonardo Marcatti'),
+            replyTo: [
+                new Address('taylor@example.com', 'Taylor Otwell'),
+            ],
         );
     }
   
@@ -51,6 +56,6 @@ class RegisterMail extends Mailable
      */
     public function attachments(): array
     {
-        return [];
+        return [Attachment::fromPath('favicon.ico')];
     }
 }
