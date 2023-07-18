@@ -56,6 +56,6 @@ class RegisterMail extends Mailable
      */
     public function attachments(): array
     {
-        return [Attachment::fromPath('favicon.ico')];
+        return [Attachment::fromPath('/var/www/html/programacao/curso/B7Web/laravel/B7WebMailer/public/favicon.ico')->as('ico.ico')->withMime('image/vnd.microsoft.icon')];
     }
 }

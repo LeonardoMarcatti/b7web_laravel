@@ -11,7 +11,7 @@
     @endslot
     @slot('main')
     <section id="task_section">
-      <h1>Fala seu Login</h1>
+      <h1>Faça seu Login</h1>
       @if($errors->any())
         <ul>
           @foreach($errors->all() as $error)

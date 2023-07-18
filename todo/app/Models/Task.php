@@ -39,4 +39,8 @@ class Task extends Model
         $this->where('id', $id)->delete();
         return true;
     }
+
+    function getDayTasks($date, $id) {
+        return $this->select()->whereDate('date', $date)->where('user_id', '=', $id)->take(5)->orderBy('id', 'desc')->get();
+    }
 }

@@ -6,7 +6,6 @@ use App\Models\Task;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Redirect;
 
 class TaskController extends Controller
 {
@@ -88,7 +87,7 @@ class TaskController extends Controller
     public function createAction(Request $r)
     {
         $data = $r->only(['title', 'category_id', 'date', 'description']);
-        $data['user_id'] = 1;
+        $data['user_id'] = Auth::user()->id;
         $model = new Task();
         $model->create($data);
         return \redirect(route('home'));
@@ -103,7 +102,7 @@ class TaskController extends Controller
         $this->model = new Task();
         $foundTask = $this->model->getTask($r->id);
         if ($foundTask) {
-            return \view('sure', ['id' => $r->id], $this->data);
+            return \view('sure', $this->data);
         }
 
         return \redirect(route('home'));

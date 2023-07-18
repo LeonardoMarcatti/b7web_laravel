@@ -53,6 +53,7 @@
         const json = await result.json()
 
         if (json) {
+          location.reload()
           alert('Tarefa atualizada com sucesso!')
         } else {
           param.checked = !param.checked
