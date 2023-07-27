@@ -30,7 +30,7 @@ class AuthController extends Controller
             return \redirect(route('home'));
         }
 
-        return \redirect(route('login'));
+        return \redirect(route('login'))->with('loginError', 'Usuário e/ou senha incorretos');
     }
 
     public function logup()
@@ -46,13 +46,13 @@ class AuthController extends Controller
 
     public function logupAction(Request $r)
     {
-        $r->validate(['name' => 'required', 'email' => 'required|email|unique:users', 'password' => 'required|min:6|confirmed'], ['name.required' => 'O campo é obrigatório', 'email.required' => 'O campo é obrigatório', 'email.email' => 'Insira um email válido', 'email.unique' => 'Email existente', 'password.required' => 'O campo é obrigatório', 'password.min' => 'A senha deve ter pelo menos 6 dígitos', 'password.confirmed' => 'As senhas devem ser iguais']);
+        $r->validate(['name' => 'required', 'email' => 'required|email|unique:users,email', 'password' => 'required|min:6|confirmed'], ['name.required' => 'O campo é obrigatório', 'email.required' => 'O campo é obrigatório', 'email.email' => 'Insira um email válido', 'email.unique' => 'Email existente', 'password.required' => 'O campo é obrigatório', 'password.min' => 'A senha deve ter pelo menos 6 dígitos', 'password.confirmed' => 'As senhas devem ser iguais']);
         $data = $r->all();
         $data['password'] = Hash::make($data['password']);
         $this->model = new User();
         $creted = $this->model->createUser($data);
         if ($creted != null) {
-            return \redirect(route('home'));
+            return \redirect(route('login'));
         }
     }
 

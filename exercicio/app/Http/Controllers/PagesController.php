@@ -121,7 +121,7 @@ class PagesController extends Controller
   public function layout2()
   {
     $this->data['title'] = 'Layout 2';
-    $this->data['header'] = 'Layout';
+    $this->data['header'] = 'Layout 2';
     $this->data['footer'] = 'Layout 2';
     $this->data['css'] = 'layout2.css';
     $this->data['app'] = 'app2.css';

@@ -252,9 +252,14 @@ main {
 
 .inputArea {
   margin: 10px 0 20px 0;
+  height: auto;
 }
 
-.inputArea, .inputArea label {
+.inputArea > small {
+  color: tomato !important;
+}
+
+.inputArea, .inputArea label, .inputArea > input {
   display: block;
 }
 

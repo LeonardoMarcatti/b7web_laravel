@@ -20,6 +20,7 @@
   <body>
     <header>
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/985px-Laravel.svg.png" alt="">
+      <h1>{{$header}}</h1>
       <nav>
         <a href="#">Link 1</a>
         <a href="#">Link 2</a>

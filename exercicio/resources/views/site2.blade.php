@@ -5,6 +5,9 @@
     @slot('title')
       {{$title}}
     @endslot
+    @slot('header')
+      {{$header}}
+    @endslot
     @slot('css')
       {{$css}}
     @endslot

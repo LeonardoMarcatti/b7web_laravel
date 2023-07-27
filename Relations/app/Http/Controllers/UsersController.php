@@ -46,7 +46,7 @@ class UsersController extends Controller
             $this->model->save();
             return 'Usuário salvo com sucesso!';
         } catch (\Throwable $th) {
-            return 'Erro ao salvar usuário!';
+            return $th->getMessage();
         }
     }
 }
