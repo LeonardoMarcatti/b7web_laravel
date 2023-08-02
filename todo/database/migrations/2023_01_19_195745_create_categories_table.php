@@ -18,7 +18,7 @@ return new class extends Migration
             $table->timestamps();
             $table->string('color')->default('#fff');
             $table->string('description')->nullable(false);
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('user_id')->unique();
         });
     }
 

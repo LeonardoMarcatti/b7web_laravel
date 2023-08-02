@@ -20,7 +20,7 @@ class CategoryFactory extends Factory
         return [
             'description' => $this->faker->text(50),
             'color' => $this->faker->safeHexColor(),
-            'user_id' => User::all()->random(),
+            'user_id' => $this->faker->unique()->numberBetween(1, 20)
         ];
     }
 }

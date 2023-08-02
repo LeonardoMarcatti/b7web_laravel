@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\Test;
 
-class Post extends Model
+class Outra extends Model
 {
     protected $fillable = ['title', 'content', 'author'];
     

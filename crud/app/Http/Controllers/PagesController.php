@@ -8,7 +8,7 @@ class PagesController extends Controller
 {
     private array $data;
 
-    public function index()
+    public function home()
     {
         $this->data['title'] = 'CRUD';
         $this->data['footer'] = 'Footer - CRUD';

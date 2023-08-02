@@ -49,6 +49,8 @@ class PostController extends Controller
         // $this->post->save();       
 
         // Imprime na tela um debug completo
+
+        return \redirect()->route('/');
     }
 
     /**
@@ -130,9 +132,19 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(int $id = 2)
+    public function destroy(Request $r)
     {
-        $delete = Post::find($id);
-        return ($delete) ? $delete->delete() : 'Não encontrado' ;
+        // $delete = Post::find($id);
+        // return ($delete) ? $delete->delete() : 'Não encontrado' ;
+
+        $id = $r->id;
+        $this->post = new Post();
+        $post = $this->post->find($id);
+        if ($post) {
+            $post->delete();
+            return \redirect()->route('/');
+        }
+
+        return 'Erro!';
     }
 }
