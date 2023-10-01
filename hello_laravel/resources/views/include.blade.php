@@ -1,8 +1,9 @@
 <main>
   <section>
     <h2>Include</h2>
-    @include('components.includeComponent', ['dado' => 'Dado 1'])
-    @include('components.includeComponent', ['dado' => 'Dado 2'])
-    @include('components.includeComponent', ['dado' => 'Dado 3'])
+    <p>Includes são bons para dados estáticos</p>
+    @foreach ($data as $ing)
+      @include('components.includeComponent', ['ing' => $ing])
+    @endforeach
   </section>
 </main>
