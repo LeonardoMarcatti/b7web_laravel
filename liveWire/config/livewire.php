@@ -14,7 +14,6 @@ return [
     */
 
     'class_namespace' => 'App\\Livewire',
-    'asset_url' => '/programacao/curso/B7Web/laravel/liveWire/public/',
 
     /*
     |---------------------------------------------------------------------------
@@ -129,6 +128,7 @@ return [
 
     'navigate' => [
         'show_progress_bar' => true,
+        'progress_bar_color' => '#2299dd',
     ],
 
     /*
