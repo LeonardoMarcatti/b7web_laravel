@@ -19,6 +19,7 @@ Route::controller(PagesController::class)->group( function() {
     Route::get('/comp', 'component');
     Route::get('/layout', 'layout');
     Route::get('/layout2', 'layout2');
+    Route::get('/layout3', 'layout3');
     Route::get('/include2', 'include2');
     Route::get('/include', 'include');
     Route::get('/if', 'includeIf');

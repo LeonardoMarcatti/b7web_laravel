@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Livewire\Counter;
-use App\Livewire\Name;
+use App\Livewire\Greet;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,9 +15,6 @@ use App\Livewire\Name;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('/counter', Counter::class);
-Route::get('/name', Name::class);
+Route::get('/', Counter::class)->name('counter');
+Route::get('/name', Greet::class)->name('name');

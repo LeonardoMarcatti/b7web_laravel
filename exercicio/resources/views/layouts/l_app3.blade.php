@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="pt-BR">
+
    <head>
       <meta charset="UTF-8" http-equiv="content-type" content="text/html">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,15 +11,15 @@
       <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous" defer></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous" defer></script>
       <script src="https://kit.fontawesome.com/ec29234e56.js" crossorigin="anonymous" defer></script>
-      <title>{{ $title ?? 'Page Title' }}</title>
+      <title>{{$title}}</title>
    </head>
+
    <body class="container-fluid">
-      <header>
-         <a href="{{route('name')}}">Name</a>
-         <a href="{{route('counter')}}">Counter</a>
-      </header>
+      @section('sidebar')
+      @show
       <main>
-         {{ $slot }}
+         @yield('main')
       </main>
    </body>
+
 </html>

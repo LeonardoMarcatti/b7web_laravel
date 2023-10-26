@@ -1,8 +1,8 @@
-@section('top')
+@yield('top')
   @show
-@section('aside')
+@yield('aside')
   @show
-@section('main')
+@yield('main')
   @show
-@section('bottom')
+@yield('bottom')
   @show

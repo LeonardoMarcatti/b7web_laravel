@@ -26,7 +26,7 @@
       <!-- Abaixo uma forma como o Blade ignora o que vem depois de arroba permitindo que o que tenha dentro das chaves seja processada por outros renderizadores front end tais como React, Angula ou Vue -->
       @{!!$html!!}
         <br>
-      @for($i=1; $i<=10; $i++)
+      @for($i=1; $i<=3; $i++)
         <p>O valor é: {{$i}}</p>
       @endfor
     </section>

@@ -1,6 +1,6 @@
 @if (is_array($ing))
   @for ( $i = 0; $i < count($ing); $i++)
-    <span>{{$ing[$i]}}</span>
+    <small>{{$ing[$i]}}</small>
   @endfor
 @else
   <h2>
