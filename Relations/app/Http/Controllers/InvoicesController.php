@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Invoices;
 
-use function PHPUnit\Framework\isNull;
-
 class InvoicesController extends Controller
 {
     public function index()
