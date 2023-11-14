@@ -111,6 +111,7 @@ class PagesController extends Controller
   public function layout()
   {
     $this->data['title'] = 'Layout';
+    $this->data['header'] = 'Layout';
     $this->data['message'] = 'Mensagem vinda do Controller';
     $this->data['footer'] = 'Layout';
     $this->data['css'] = 'layout.css';
@@ -129,5 +130,18 @@ class PagesController extends Controller
     $this->data['main'] = 'Eu sou main do layout 2!';
     $this->data['arr'] = ['banana', 'maçã', 'abacate'];
     return view('site2', $this->data);
+  }
+
+  public function layout3()
+  {
+    $this->data['title'] = 'Layout 3 Novo';
+    $this->data['header'] = 'Layout 3';
+    $this->data['footer'] = 'Layout 3';
+    $this->data['css'] = 'layout2.css';
+    $this->data['app'] = 'app2.css';
+    $this->data['sidebar'] = 'Conteúdo Sidebar';
+    $this->data['main'] = 'Eu sou main do layout 3!';
+    $this->data['arr'] = ['banana', 'maçã', 'abacate'];
+    return view('site3', $this->data);
   }
 }

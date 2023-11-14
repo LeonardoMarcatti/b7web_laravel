@@ -5,6 +5,9 @@
     @slot('title')
       {{$title}}
     @endslot
+    @slot('header')
+      {{$header}}
+    @endslot
     @slot('css')
       {{$css}}
     @endslot
@@ -21,7 +24,7 @@
 @endsection
 
 @section('bottom')
-@parent 
+@parent
 <!-- @parent mostra o conteúdo do layout pai-->
   <x-c_bottom>
     @slot('footer')
