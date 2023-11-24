@@ -31,7 +31,8 @@ class HomeController extends Controller
       $data['states'] = $this->states;
       $data['categories'] = $this->categories;
 
+
       return view('home', $data);
-   
+
    }
 }

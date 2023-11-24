@@ -8,7 +8,7 @@ use Illuminate\View\Component;
 
 class header extends Component
 {
-    public array $data;
+    // public array $data;
     /**
      * Create a new component instance.
      */
@@ -22,7 +22,7 @@ class header extends Component
      */
     public function render(): View|Closure|string
     {
-        $this->data['user'] = 'leo';
-        return view('components.base.header', $this->data);
+        $data['user'] = 'leo';
+        return view('components.base.header', $data);
     }
 }

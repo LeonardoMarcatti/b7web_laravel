@@ -15,7 +15,7 @@
     <title>B7Store</title>
   </head>
   <body>
-    <x-base.header :user="$user"/>    
+    <x-base.header />
     <main>
       <x-hero :states="$states" :categories="$categories"/>
       <x-advertise-filter />
