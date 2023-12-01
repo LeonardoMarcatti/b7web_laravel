@@ -29,62 +29,10 @@
       <div class="ads">
         <div class="ads-title">Anúncios recentes</div>
         <div class="ads-area">
-          <x-single-advertise bgImage="http://placehold.it/100x100" title='Bola de Futebol Americano Wilson' price="R$ 138,61" href="#"/>
-          <div class="ad-item">
-            <div
-              class="ad-image"
-              style="background-image: url('http://placehold.it/150x150')"
-            ></div>
-            <div class="ad-title">Tênis vans Baby - 1 ano</div>
-            <div class="ad-price">R$ 189,99</div>
-          </div>
-          <div class="ad-item">
-            <div
-              class="ad-image"
-              style="background-image: url('http://placehold.it/150x150')"
-            ></div>
-            <div class="ad-title">Controle PS4 - Preto</div>
-            <div class="ad-price">R$ 275,00</div>
-          </div>
-          <div class="ad-item">
-            <div
-              class="ad-image"
-              style="background-image: url('http://placehold.it/150x150')"
-            ></div>
-            <div class="ad-title">Volkswagen Fusca 68</div>
-            <div class="ad-price">R$ 34.990,00</div>
-          </div>
-          <div class="ad-item">
-            <div
-              class="ad-image"
-              style="background-image: url('http://placehold.it/150x150')"
-            ></div>
-            <div class="ad-title">Volkswagen Polo 2015 - Azul</div>
-            <div class="ad-price">R$ 67.900,00</div>
-          </div>
-          <div class="ad-item">
-            <div
-              class="ad-image"
-              style="background-image: url('http://placehold.it/150x150')"
-            ></div>
-            <div class="ad-title">Camisas sociais masculinas</div>
-            <div class="ad-price">R$ 110,00</div>
-          </div>
-          <div class="ad-item">
-            <div
-              class="ad-image"
-              style="background-image: url('http://placehold.it/150x150')"
-            ></div>
-            <div class="ad-title">Bola de Basquete Spalding - NBA</div>
-            <div class="ad-price">R$ 190,36</div>
-          </div>
-          <div class="ad-item">
-            <div
-              class="ad-image"
-              style="background-image: url('http://placehold.it/150x150')"
-            ></div>
-            <div class="ad-title">MacBook Pro</div>
-            <div class="ad-price">R$ 8.349,10</div>
-          </div>
+            @foreach ($advertiseList as $key => $ad)
+                <x-single-advertise bgImage="{{$ad['image']}}" title="{{$ad['title']}}" price="{{$ad['price']}}" href="{{$ad['href']}}"/>
+            @endforeach
+
+
         </div>
       </div>

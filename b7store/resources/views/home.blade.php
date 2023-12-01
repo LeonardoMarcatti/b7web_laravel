@@ -17,9 +17,9 @@
   <body>
     <x-base.header />
     <main>
-      <x-hero :states="$states" :categories="$categories"/>
-      <x-advertise-filter />
+      <x-hero :states="$states" :categories="$categories" />
+      <x-advertise-filter :advertiseList="$advertiseList" />
     </main>
-    <x-base.footer/>
+    <x-base.footer />
   </body>
 </html>

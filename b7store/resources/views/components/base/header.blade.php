@@ -4,7 +4,7 @@
         <div class="header-area-right">
           <a href="login.html" class="my-account">
             <img src="assets/icons/userIcon.png" />
-            Minha Conta {{$user}}
+            Minha Conta
           </a>
           <a href="" class="announce-now">Anunciar agora →</a>
           <img class="menu-icon" src="assets/icons/menuIcon.png" alt="Menu" />

@@ -12,12 +12,11 @@ class hero extends Component
     * Create a new component instance.
     */
 
-   public array $states;
-   public array $categories;
+   public array $data;
 
    public function __construct()
    {
-      $this->states = [
+      $this->data['states'] = [
          ['value' => 'RS', 'name' => 'Rio Grande do Sul'],
          ['value' => 'SC', 'name' => 'Santa Catarina'],
          ['value' => 'PR', 'name' => 'Paraná'],
@@ -26,13 +25,14 @@ class hero extends Component
          ['value' => 'ES', 'name' => 'Espirito Santo'],
          ['value' => 'MG', 'name' => 'Minas Gerais'],
    ];
-      $this->categories = [
+      $this->data['categories'] = [
          ['value' => 'Carros', 'name' => 'Carros'],
          ['value' => 'Eletrônicos', 'name' => 'Eletrônicos'],
          ['value' => 'Roupas', 'name' => 'Roupas'],
          ['value' => 'Esportes', 'name' => 'Esportes'],
          ['value' => 'Bebês', 'name' => 'Bebês']
       ];
+
    }
 
    /**
@@ -40,7 +40,6 @@ class hero extends Component
     */
    public function render(): View|Closure|string
    {
-      $data['states'] = $this->states;
       return view('components.hero');
    }
 }
