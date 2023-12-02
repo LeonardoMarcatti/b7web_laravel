@@ -6,9 +6,10 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
-  font-family: "Inter", Arial, Helvetica, sans-serif;
-}
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+  }
 
 /*
 * Header
@@ -18,6 +19,7 @@ header {
   padding: 30px 0;
   border-bottom: 1.5px solid #e7e9ed;
 }
+
 .header-area {
   max-width: 1280px;
   margin: auto;
@@ -25,6 +27,7 @@ header {
   justify-content: space-between;
   align-items: center;
 }
+
 .header-area-left {
   font-size: 24px;
   font-style: normal;
@@ -33,12 +36,14 @@ header {
   text-decoration: none;
   color: #5c7bfa;
 }
+
 .header-area-right {
   width: 316px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+
 .my-account {
   display: flex;
   align-items: center;
@@ -49,9 +54,11 @@ header {
   font-weight: 400;
   line-height: normal;
 }
+
 .my-account img {
   margin-right: 10px;
 }
+
 .announce-now {
   text-decoration: none;
   font-size: 16px;
@@ -60,9 +67,11 @@ header {
   line-height: normal;
   color: #5c7bfa;
 }
+
 .menu-icon {
   display: none;
 }
+
 .menu-mobile {
   display: none;
   width: 180px;
@@ -74,6 +83,7 @@ header {
   flex-direction: column;
   align-items: center;
 }
+
 .my-account-mobile {
   display: flex;
   justify-content: space-between;
@@ -104,6 +114,7 @@ main {
   align-items: center;
   margin-top: 100px;
 }
+
 .hero-area .subtitle {
   font-size: 20px;
   font-style: normal;
@@ -119,12 +130,14 @@ main {
   font-weight: 500;
   line-height: normal;
 }
+
 .search-area {
   margin-top: 64px;
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
+
 .hero-area .search-text {
   width: 38%;
   aspect-ratio: 6/1;
@@ -137,6 +150,7 @@ main {
   border: 1.5px solid #e7e9ed;
   outline: none;
 }
+
 .hero-area .categories-options,
 .hero-area .states {
   width: 18%;
@@ -150,6 +164,7 @@ main {
   outline: none;
   border: 1.5px solid #e7e9ed;
 }
+
 .hero-area .search-button {
   width: 18%;
   aspect-ratio: 14/5;
@@ -173,6 +188,7 @@ main {
   margin-top: 128px;
   width: 100%;
 }
+
 .categories-area .title {
   margin-bottom: 18px;
   color: #3c4952;
@@ -198,6 +214,7 @@ main {
   cursor: pointer;
   border: 0;
 }
+
 .buttons .cars {
   background-color: #5c7bfa;
   color: #fff;
@@ -214,6 +231,7 @@ main {
   background-color: #f5f7ff;
   color: #5c7bfa;
 }
+
 .buttons .cars img,
 .buttons .eletronics img,
 .buttons .clothes img,
@@ -232,6 +250,7 @@ main {
 .ads {
   margin-top: 76px;
 }
+
 .ads-title {
   color: #3c4952;
   font-size: 16px;
@@ -254,7 +273,6 @@ main {
   text-decoration: none;
 }
 
-
 .ad-item .ad-image {
   width: 100%;
   aspect-ratio: 147/100;
@@ -263,6 +281,7 @@ main {
   background-size: cover;
   margin-bottom: 16px;
 }
+
 .ad-title {
   width: 90%;
   color: #3c4952;
