@@ -14,6 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Open+Sans:ital@0;1&family=Oswald:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="assets/style.css" />
     <link rel="stylesheet" href="assets/loginSignUpStyle.css" />
+    <script src="{{ URL::asset('assets/js/logup.js') }}" defer></script>
 
     <title>B7Store - Login</title>
   </head>
@@ -23,24 +24,13 @@
     <div class="login-page">
       <div class="login-area">
         <h3 class="login-title">B7Store</h3>
-        <div class="text-login">
-          Use as suas credenciais para realizar o Login.
-        </div>
-        <form>
-          <div class="email-area">
-            <div class="email-label">E-mail</div>
-            <input type="email" placeholder="Digite o seu e-mail" />
-          </div>
-          <div class="password-area">
-            <div class="password-label">
-              <div class="password-area-text">Senha</div>
-              <a href="{{route('forgotPassword')}}" class="password-area-forgot">Esqueceu sua senha?</a>
-            </div>
-            <div class="password-input-area">
-              <input type="password" placeholder="Digite a sua senha" />
-              <img src="assets/icons/eyeIcon.png" alt="Ícone mostrar senha" />
-            </div>
-          </div>
+        @if(session('message'))
+            <small class="error">{{session('message')}}</small>
+        @endif
+        <form action="{{route('loginAction')}}" method="post">
+            @csrf
+            <x-form.input class="email-area" labelClass="email-label" label="Email" type="email" placeholder="Digite seu email aqui" name="email" errorName="email"/>
+            <x-form.password-input  type="password" name="password" placeholder="Digite sua senha" label="Senha" id="password"/>
           <button class="login-button">Entrar</button>
         </form>
         <div class="register-area">

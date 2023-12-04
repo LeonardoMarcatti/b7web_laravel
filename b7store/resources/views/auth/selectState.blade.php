@@ -25,43 +25,9 @@
             <div class="state-area">
                 <select name="state" id="state" class="name-area">
                     <option value="">Selecione seu Estado</option>
-                    <option value="DF">Distrito Federal</option>
-                    <optgroup label="Sul">
-                        <option value="RS">Rio Grande do Sul</option>
-                        <option value="SC">Santa Catarina</option>
-                        <option value="PR">Paraná</option>
-                    </optgroup>
-                    <optgroup label="Sudeste">
-                        <option value="SP">São Paulo</option>
-                        <option value="RJ">Rio de Janeiro</option>
-                        <option value="ES">Espírito Santo</option>
-                        <option value="MG">Minas Gerais</option>
-                    </optgroup>
-                    <optgroup label="Centro-Oeste">
-                        <option value="MT">Mato Grosso</option>
-                        <option value="MS">Mato Grosso do Sul</option>
-                        <option value="GO">Goiás</option>
-                    </optgroup>
-                    <optgroup label="Nordeste">
-                        <option value="BA">Bahía</option>
-                        <option value="SE">Sergipe</option>
-                        <option value="AL">Alagoas</option>
-                        <option value="PE">Pernanbuco</option>
-                        <option value="PA">Paraíba</option>
-                        <option value="PI">Piauí</option>
-                        <option value="MA">Maranhão</option>
-                        <option value="CE">Ceará</option>
-                        <option value="RN">Rio Grande do Norte</option>
-                    </optgroup>
-                    <optgroup label="Norte">
-                        <option value="AM">Amazonas</option>
-                        <option value="RR">Roraima</option>
-                        <option value="RO">Rondonia</option>
-                        <option value="AP">Amapá</option>
-                        <option value="AC">Acre</option>
-                        <option value="PA">Pará</option>
-                        <option value="TO">Tocantis</option>
-                    </optgroup>
+                    @foreach($states as $state)
+                        <option value="{{$state['id']}}">{{$state['name']}}</option>
+                    @endforeach
                 </select>
             </div>
           <button class="login-button">Selecione</button>

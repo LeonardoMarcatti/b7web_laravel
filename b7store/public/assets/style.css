@@ -122,6 +122,7 @@ main {
   line-height: normal;
   color: #96a3ab;
 }
+
 .hero-area .title {
   margin-top: 34px;
   color: #3c4952;
@@ -247,11 +248,11 @@ main {
 * Ads
 */
 
-.ads {
+.sad {
   margin-top: 76px;
 }
 
-.ads-title {
+.sad-title {
   color: #3c4952;
   font-size: 16px;
   font-style: normal;
@@ -259,7 +260,7 @@ main {
   line-height: normal;
   margin-bottom: 16px;
 }
-.ads-area {
+.sad-area {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
@@ -374,10 +375,10 @@ footer span:last-child {
   .categories-area {
     margin-top: 64px;
   }
-  .ads {
+  .sad {
     margin-top: 48px;
   }
-  .ads-area {
+  .sad-area {
     grid-template-columns: repeat(3, 1fr);
   }
   footer {
@@ -422,7 +423,7 @@ footer span:last-child {
   .buttons .babies {
     width: 100%;
   }
-  .ads-area {
+  .sad-area {
     grid-template-columns: repeat(2, 1fr);
   }
   .ad-title {
@@ -480,16 +481,16 @@ footer span:last-child {
     width: 158px;
     height: 72px;
   }
-  .ads {
+  .sad {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 48px;
   }
-  .ads-title {
+  .sad-title {
     margin-left: -190px;
   }
-  .ads-area {
+  .sad-area {
     width: 335px;
     display: flex;
     flex-direction: column;

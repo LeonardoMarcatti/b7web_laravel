@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\StatesModel;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class User extends Authenticatable
 {
@@ -21,6 +23,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'state_id',
     ];
 
     /**
@@ -42,4 +45,19 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function state() : BelongsTo
+    {
+        return $this->belongsTo(StatesModel::class, 'state_id', 'id');
+    }
+
+    public function saveUser(array $data) : bool
+    {
+        return $this->save($data);
+    }
+
+    public function updateuser(array $data)
+    {
+        return $this->update($data);
+    }
 }

@@ -26,13 +26,11 @@
           </button>
         </div>
       </div>
-      <div class="ads">
-        <div class="ads-title">Anúncios recentes</div>
-        <div class="ads-area">
+      <div class="sad">
+        <div class="sad-title">Anúncios recentes</div>
+        <div class="sad-area">
             @foreach ($advertiseList as $key => $ad)
                 <x-single-advertise bgImage="{{$ad['image']}}" title="{{$ad['title']}}" price="{{$ad['price']}}" href="{{$ad['href']}}"/>
             @endforeach
-
-
         </div>
       </div>
