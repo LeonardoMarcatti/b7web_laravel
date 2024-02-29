@@ -1,2 +1,0 @@
-{{$slot}}
-<!-- Escapamos o HTML -->

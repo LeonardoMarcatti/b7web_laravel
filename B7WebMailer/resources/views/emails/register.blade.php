@@ -1,2 +1,0 @@
-{{ $data['title'] }}
-{{ $data['body']}}
