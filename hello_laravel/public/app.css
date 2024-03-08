@@ -1,6 +1,6 @@
 * {
-   padding: 0;
-   margin: 0;
+   padding: 0 !important;
+   margin: 0 !important;
  }
 
  body {
@@ -17,26 +17,32 @@
  }
 
  header {
-   background-color: gray;
-   width: 100vw;
-   transition: all 0.3s ease-in-out;
-   justify-content: space-between;
-     &:hover {
-       background-color: darkgray;
-     }
+    background-color: gray;
+    transition: all 0.3s ease-in-out;
+    justify-content: space-between;
+        &:hover {
+            background-color: darkgray;
+        }
  }
 
- header nav ul {
+ nav {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+ }
+
+ ul {
    display: flex;
    flex-flow: row nowrap;
-   padding: 0;
-   margin: 0;
+   align-items: center;
+   justify-content: center;
+
  }
 
  li {
-   list-style-type: none;
-   margin: 0 10px;
-   padding: 5px 20px;
+    list-style: none;
+    padding: 10px 20px !important;
  }
 
  li:hover {
@@ -53,13 +59,26 @@
   color: white;
  }
 
- main {
+ #content {
     background-color: silver;
+    display: flex;
+    flex-flow: row-reverse nowrap;
+ }
+
+ main {
+    background-color: blue;
+    flex: 5;
+ }
+
+ aside {
+    background-color: darkgreen;
+    flex: 1;
  }
 
  p {
    text-indent: 1rem;
-   text-align: justify;
+   text-align: left;
+   margin-bottom: 5px !important
  }
 
  a {
@@ -71,4 +90,62 @@
    background-color: rgb(39, 39, 39);
    color: white;
    justify-content: center;
+ }
+
+ #repeat {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-around;
+ }
+
+ button {
+  border: none;
+  padding: 5px 10px !important;
+  border-radius: 10px;
+ }
+
+button > a {
+    color: white;
+ }
+
+ .cards {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    width: 100%;
+    margin-bottom: 10px;
+ }
+
+ #fotos {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  width: 100%;
+  padding: 10px;
+}
+
+#fotos img {
+  border-radius: 50%;
+  margin: 10px;
+  box-shadow: 0 0 15px orange;
+}
+
+ .card{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-items: center;
+  align-items: center;
+  width: 250px;
+  box-shadow: 0 0 15px black;
+ }
+
+ .card img{
+  border-radius: 15px;
+ }
+
+ .image{
+  width: 150px;
  }
