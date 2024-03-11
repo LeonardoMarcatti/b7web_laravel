@@ -1,0 +1,100 @@
+   * {
+      padding: 0 !important;
+      margin: 0 !important;
+  }
+
+   body {
+      display: grid;
+      grid-template-columns: 1fr;
+      min-height: 100vh;
+      grid-template-rows: 50px minmax(calc(100vh - 80px), auto) 30px;
+   }
+
+   header, footer, nav, ul {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+   }
+
+   header {
+      background-color: lightblue;
+      justify-content: space-between;
+      padding-left: 10px !important;
+   }
+
+   nav, ul {
+      justify-content: center;
+   }
+
+
+   li {
+      list-style: none;
+      margin-right: 15px !important;;
+   }
+
+   main, .cartFoot {
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+      padding-left: 10px !important;
+      justify-content: space-evenly;
+   }
+
+   .card {
+        display: flex;
+        flex-flow: column wrap;
+        align-items: flex-start;
+        justify-content: space-evenly;
+        background-color: lightblue;
+        padding: 10px 15px !important;
+        margin-top: 15px !important;
+        width: 250px;
+   }
+
+    .cartFoot {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+
+   #update {
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: center;
+      justify-content: center;
+   }
+
+   #updateForm {
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: flex-start;
+      justify-content: center;
+      width: 25%;
+   }
+
+   #updateForm > input, #updateForm > div {
+      margin-top: 10px !important;
+   }
+
+   #updateForm div {
+      width: 100%;
+   }
+
+   #updateForm input {
+      border: none;
+      border-bottom: 1px gray solid;
+      width: 100%;
+      outline: none;
+   }
+
+   #updateForm button {
+      padding: 5px 15px !important;
+      border-radius: 10px;
+   }
+
+   footer {
+      background-color: gray;
+      justify-content: center;
+   }
