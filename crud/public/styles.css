@@ -56,8 +56,20 @@
         flex-flow: row wrap;
         align-items: center;
         justify-content: space-around;
+        width: 100%;
     }
 
+    a {
+        text-decoration: none;
+    }
+
+    .delete {
+        color: red
+    }
+
+    .update {
+        color: green;
+    }
 
    #update {
       display: flex;

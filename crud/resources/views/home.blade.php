@@ -15,8 +15,8 @@
                     <p>{{$post->content}}</p>
                     <small>{{$post->author}}</small>
                     <div class="cartFoot">
-                        <a href="{{route('update', ['id' => $post->id])}}">Update</a>
-                        <a href="{{route('delete', ['id' => $post->id])}}">Delete</a>
+                        <a href="{{route('update', ['id' => $post->id])}}" class="update">Update <i class="fa-solid fa-pencil"></i></a>
+                        <a href="{{route('delete', ['id' => $post->id])}}" class="delete">Delete <i class="fa-solid fa-trash"></i></a>
                     </div>
                 </div>
 

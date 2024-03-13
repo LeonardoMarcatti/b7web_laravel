@@ -55,7 +55,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'https://192.168.1.160/programacao/cursos/B7Web/laravel/crud/public/'),
+    'url' => env('APP_URL', 'https://192.168.1.160/programacao/cursos/B7Web/laravel/relations/public/'),
 
     'asset_url' => env('ASSET_URL'),
 
